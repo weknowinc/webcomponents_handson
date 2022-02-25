@@ -32,4 +32,6 @@ intro…
 ```
 fin stop
 fin project remove
+rm -Rf vendor
+rm -Rf web
 ```
