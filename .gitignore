@@ -45,6 +45,8 @@ public/css/main.css
 # Editors
 .idea
 *.iml
+/.editorconfig
+/.gitattributes
 
 # OS metadata
 .DS_Store
@@ -53,7 +55,8 @@ Thumbs.db
 # Ignore built ts files
 dist/**/*
 
-# ignore yarn.lock
+# Ignore yarn.lock
 yarn.lock
-/.editorconfig
-/.gitattributes
+
+# Ignore outline output documents
+*.lit.ts
