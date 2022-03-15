@@ -37,16 +37,16 @@ yarn install
 yarn start
 ```
 
-This will start StoryBook and keep updating when you do changes.
+This will start Storybook and keep updating when you do changes.
 
 ## webComponent examples
 
 When using outline/webComponents you'll have two realms:
 
-- The StoryBook version of the component where you can refine and test it.
+- The Storybook version of the component where you can refine and test it.
 - The compiled version of your webComponent which you will export to Drupal and use it in your template.
 
-These are examples which you will be able to check within StoryBook. In the next chapter "Drupal Integration" we will use them.
+These are examples which you will be able to check within Storybook. In the next chapter "Drupal Integration" we will use them.
 
 ### Scenario 1: webComponent Hello World
 
@@ -56,11 +56,11 @@ You can find the code for this example at: `<webcomponents-handson-repo-folder>/
 
 Within it you'll find 3 files:
 
-- The style file `wk-simple-card.css`
-- The TypeScript file with the webComponent description `wk-simple-card.ts`.
-- The StoryBook file `wk-simple-card.stories.ts` with an example use of the defined webComponent.
+- The style file `wk-simple-card.css`: The only say to say about it is the particular syntax to refer to the webcomponent name. Instead of the name, we add "&" and that will be interpreted as the webcomponent name.
+- The TypeScript file with the webComponent description `wk-simple-card.ts`: You can first see the explicit declaration of the atributes (aka property) and the html template which includes the properties.
+- The Storybook file `wk-simple-card.stories.ts` with an example use of the defined webComponent: This also can be used as an implementation example. You will first need to export the properties, grab them in the template and use the webComponent.
 
-Once you have run Yarn you'll also have an output file used by StoryBook `*.lit.ts` which has the compiled output and should be ignored.
+Once you have run Yarn you'll also have an output file used by Storybook `*.lit.ts` which has the compiled output and should be ignored. It is interesting to see that this CSS/TS is the one used by the implementation example created for Storybook.
 
 ### Scenario 3: webComponent gets data as slots
 
