@@ -1,0 +1,7 @@
+## Setups your Drupal for this handons
+## Usage: fin update-outline
+
+cd ${PROJECT_ROOT}
+zcat resources/drupalwc.sql.gz | fin db import --progress
+fin drush generate-realistic
+fin update-outline

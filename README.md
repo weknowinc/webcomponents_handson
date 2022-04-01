@@ -19,12 +19,17 @@ If you already cloned it, there is a script (`fix_repo.sh`) which will do the sa
 
 ```
 fin init
-zcat resources/drupalwc.sql.gz | fin db import --progress
-fin drush generate-realistic
+fin wk-setup
 ```
 
 This will leave you with a Drupal 9.1 installation using Olivero as the theme and some content.
 Once you fetch Phase2's [Outline](https://github.com/phase2/outline) design system you'll be ready to start the hands on.
+
+There are additional commands you might find useful:
+
+- ```fin wk-fix-git```: If you don't properly clone the repositories (see README.md) this can fix your environment
+- ```fin wk-up-outline```: Compiles outline and update Drupal theme with it
+- ```fin wk-up-repos```: Useful to update all project repositories at once
 
 ### Using Phase2 Outline
 

@@ -1,6 +1,10 @@
-# If you don't properly clone the repositories (see README.md) this can fix your environment
+## If you don't properly clone the repositories (see README.md) this can fix your environment
+## Usage: fin fix-git
 
+#Proper command to avoid all this:
 #git clone --recursive --branch docksal git@github.com:weknowinc/webcomponents_handson.git
+
+cd ${PROJECT_ROOT}
 cd outline
 git checkout handson-freeze
 git submodule init

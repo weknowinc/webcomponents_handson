@@ -1,0 +1,9 @@
+## Useful to update all project repositories at once
+## Usage: fin update-repos
+
+cd ${PROJECT_ROOT}
+git pull
+cd outline
+git pull
+cd src/components/wk/
+git pull
