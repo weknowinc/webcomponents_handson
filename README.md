@@ -10,7 +10,7 @@ This top repository goes together with two other repos:
 To pull them all together you'll need to run the following **git clone** command:
 
 ```
-git clone --recurse-submodules --remote-submodules --branch docksal  git@github.com:weknowinc/webcomponents_handson.git
+git clone --recurse-submodules --remote-submodules --branch main git@github.com:weknowinc/webcomponents_handson.git
 ```
 
 If you already cloned it, there is a script (`fix_repo.sh`) which will do the same.
