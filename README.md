@@ -20,6 +20,7 @@ If you already cloned it, there is a script (`fix_repo.sh`) which will do the sa
 ```
 fin init
 fin wk-setup
+fin drush uli
 ```
 
 This will leave you with a Drupal 9.1 installation using Olivero as the theme and some content.

@@ -7,3 +7,4 @@ cd outline
 git pull
 cd src/components/wk/
 git pull
+git update-index --assume-unchanged outline
