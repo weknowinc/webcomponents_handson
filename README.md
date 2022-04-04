@@ -19,6 +19,7 @@ If you already cloned it, there is a script (`fix_repo.sh`) which will do the sa
 
 ```
 fin init
+fin start
 fin wk-setup
 fin drush uli
 ```
@@ -28,7 +29,7 @@ Once you fetch Phase2's [Outline](https://github.com/phase2/outline) design syst
 
 There are additional commands you might find useful:
 
-- ```fin wk-fix-git```: If you don't properly clone the repositories (see README.md) this can fix your environment
+- ```fin wk-fix-git```: If you don't properly clone the repositories this can fix your environment
 - ```fin wk-up-outline```: Compiles outline and update Drupal theme with it
 - ```fin wk-up-repos```: Useful to update all project repositories at once
 
