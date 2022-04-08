@@ -101,9 +101,25 @@ By using the [HTMLSlotElement](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ### Scenario 4: webComponent gets more complex data
 
+This example uses together attributes and slots.
+
+IMPORTANT: I fail to see the connection. The slot makes sense, but I don't exactly see how the rounded is passed on...
+
+
+
 ## Drupal Integration
 
-intro…
+What we are doing:
+- YML con el JS y eso exporta los webComponents
+- Twig cambiando el ViewMode Teaser del nodo
+
+For this we are using an extension of Drupal latest theme olivero, created a sub-module for it and started tweaking. First thing to mention is what you need to do to be able to use your outline created webComponents in Drupal:
+
+file:///home/ignacio/weKnow/webcomponents_handson/resources/wkth_libraries_yml.png
+
+The "attributes type module" is what makes them "magically" available.
+
+Then with a simple template like src/wkth/templates/content/node--teaser.html.twig we can see we simply use the wk-complex-card compenent and pass one the attribute "rounded" and the slot "heading". That's enough to glue everything together.
 
 ## CleanUp
 
