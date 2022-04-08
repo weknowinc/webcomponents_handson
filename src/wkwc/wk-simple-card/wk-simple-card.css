@@ -1,0 +1,41 @@
+:host {
+  @apply block overflow-hidden; 
+}
+
+.simple-card {
+  @apply relative;
+
+  &__background {
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  }
+
+  &__content {
+    @apply absolute
+      bottom-0
+      px-4
+      py-6
+      text-center
+      w-full
+      text-neutral-white;
+  }
+
+  &__tag {
+    @apply uppercase;
+  }
+
+  &__title {
+    a {
+      color: inherit;
+    }
+  }
+
+  &__meta {
+
+  }
+
+}
