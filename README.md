@@ -68,6 +68,8 @@ Some brief background about outline and technologies behind it:
 - All webComponents have a [lifeCycle](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks) and they are similar to React components.
 - For people using Drupal, there is an initiative to create webComponents for different Drupal objects. In particular the [decouple Menus/module initiative](https://www.drupal.org/project/decoupled_menus_initiative) is an interesting starting point ([mentioned by Druies in Dcon2020EU](https://dri.es/state-of-drupal-presentation-july-2020)).
 
+![ShadowDOM](./resources/ShadowDOM.jpg "ShadowDOM")
+
 In this handson you'll have examples of how to create a webComponent using outline, pass to it attributes, use slots to receive HTML, and finally using all together.
 
 These are some Web Components 101 articles you might find useful:
@@ -84,6 +86,8 @@ In the [initial example](https://github.com/weknowinc/webcomponents_wk_handson/t
 - The style file `wk-hello.css`: Which in this initial case doesn't have code.
 - The TypeScript file with the webComponent description `wk-hello.ts`: Interesting thing about it is the inclussion of LIT an outline components which make everything work. In this simple example we create a component, nothing more.
 - The Storybook file `wk-hello.stories.ts` with an example use of the defined webComponent: It just shows the created webComponent.
+
+![Seeing the webComponents in StoryBook](./resources/Outline-Phase2-StoryBook.jpg "StoryBook")
 
 Once you have run Yarn you'll also have an output file used by Storybook's implementation `wk-hello.css.lit.ts` which has the compiled output and should be ignored (it is used by the Storybook implementation).
 
@@ -115,7 +119,7 @@ IMPORTANT: I fail to see the connection. The slot makes sense, but I don't exact
 
 First we derived from Drupal's latest theme Olivero a subtheme we are calling "weKnow Outline Theme", within it's ```wkth.libraries.yml``` file we include the outline output JS+CSS and configure it so webComponents are available to the theme. The only difference between a regular subtheme with JS+CSS inclusion and the export of webComponents can be seen in this screenshot:
 
-![wkth.libraries.yml configuration](/resources/wkth_libraries_yml.png "wkth.libraries.yml")
+![wkth.libraries.yml configuration](./resources/wkth_libraries_yml.png "wkth.libraries.yml")
 
 Once this is done (you have it pre-setup in this hands on), you can simply tweak the twig file as you would always do. The "attributes type module" is what makes them "magically" available. Now you can use the webComponents on your twig.
 
@@ -126,6 +130,7 @@ Now in the template ```src/wkth/templates/content/node--teaser.html.twig``` we c
 ```
 fin stop
 fin project remove
+rm -Rf node_modules
 rm -Rf outline
 rm -Rf vendor
 rm -Rf web
