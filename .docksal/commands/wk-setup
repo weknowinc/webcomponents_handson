@@ -3,11 +3,11 @@
 
 cd ${PROJECT_ROOT}
 git clone https://github.com/phase2/outline/
-git checkout 920145e43d8fbd2243ada320e9708d47ca4680f4
+cd outline ; git checkout 920145e43d8fbd2243ada320e9708d47ca4680f4 ; cd ..
 
 mkdir -p outline/src/components/wk/
 cp -r src/wkwc/* outline/src/components/wk/
 
 zcat resources/drupalwc.sql.gz | fin db import --progress
 fin drush generate-realistic
-fin update-outline
+fin wk-up-outline

@@ -1,4 +1,0 @@
-[submodule "outline"]
-	path = outline
-	url = git@github.com:weknowinc/outline-phase2.git
-	branch = handson-freeze

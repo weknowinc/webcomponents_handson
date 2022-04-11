@@ -19,7 +19,6 @@ If you already cloned it, there is a script (`fix_repo.sh`) which will do the sa
 
 ```
 fin init
-fin start
 fin wk-setup
 fin drush uli
 ```
