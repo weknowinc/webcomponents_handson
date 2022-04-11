@@ -28,9 +28,7 @@ Once you fetch Phase2's [Outline](https://github.com/phase2/outline) design syst
 
 There are additional commands you might find useful:
 
-- ```fin wk-fix-git```: If you don't properly clone the repositories this can fix your environment
 - ```fin wk-up-outline```: Compiles outline and update Drupal theme with it
-- ```fin wk-up-repos```: Useful to update all project repositories at once
 
 ### Using Phase2 Outline
 
@@ -70,7 +68,14 @@ Some brief background about outline and technologies behind it:
 - All webComponents have a [lifeCycle](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks) and they are similar to React components.
 - For people using Drupal, there is an initiative to create webComponents for different Drupal objects. In particular the [decouple Menus/module initiative](https://www.drupal.org/project/decoupled_menus_initiative) is an interesting starting point ([mentioned by Druies in Dcon2020EU](https://dri.es/state-of-drupal-presentation-july-2020)).
 
-In this handson you'll have examples of how to create a webComponent using outline, pass to it attributes, use slots to receive HTML, and finally using all together. 
+In this handson you'll have examples of how to create a webComponent using outline, pass to it attributes, use slots to receive HTML, and finally using all together.
+
+These are some Web Components 101 articles you might find useful:
+
+- [History](https://dev.to/this-is-learning/web-components-101-history-2p24)
+- [Vanilla JavaScript](https://dev.to/this-is-learning/web-components-101-vanilla-javascript-2pja)
+- [Lit Framework](https://dev.to/this-is-learning/web-components-101-lit-framework-3en1)
+- [Framework Comparison](https://dev.to/this-is-learning/web-components-101-framework-comparison-989)
 
 ### Scenario 1: webComponent Hello World
 
@@ -108,23 +113,20 @@ IMPORTANT: I fail to see the connection. The slot makes sense, but I don't exact
 
 ## Drupal Integration
 
-What we are doing:
-- YML con el JS y eso exporta los webComponents
-- Twig cambiando el ViewMode Teaser del nodo
+First we derived from Drupal's latest theme Olivero a subtheme we are calling "weKnow Outline Theme", within it's ```wkth.libraries.yml``` file we include the outline output JS+CSS and configure it so webComponents are available to the theme. The only difference between a regular subtheme with JS+CSS inclusion and the export of webComponents can be seen in this screenshot:
 
-For this we are using an extension of Drupal latest theme olivero, created a sub-module for it and started tweaking. First thing to mention is what you need to do to be able to use your outline created webComponents in Drupal:
+![wkth.libraries.yml configuration](/resources/wkth_libraries_yml.png "wkth.libraries.yml")
 
-file:///home/ignacio/weKnow/webcomponents_handson/resources/wkth_libraries_yml.png
+Once this is done (you have it pre-setup in this hands on), you can simply tweak the twig file as you would always do. The "attributes type module" is what makes them "magically" available. Now you can use the webComponents on your twig.
 
-The "attributes type module" is what makes them "magically" available.
-
-Then with a simple template like src/wkth/templates/content/node--teaser.html.twig we can see we simply use the wk-complex-card compenent and pass one the attribute "rounded" and the slot "heading". That's enough to glue everything together.
+Now in the template ```src/wkth/templates/content/node--teaser.html.twig``` we can see the use of ```wk-complex-card``` webCompenent and pass one the attribute "rounded" and the slot "heading". That's enough to glue everything together.
 
 ## CleanUp
 
 ```
 fin stop
 fin project remove
+rm -Rf outline
 rm -Rf vendor
 rm -Rf web
 ```

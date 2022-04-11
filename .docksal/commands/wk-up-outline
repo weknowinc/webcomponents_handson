@@ -2,15 +2,14 @@
 ## Usage: fin update-outline
 
 cd ${PROJECT_ROOT}
-pushd outline
-yarn build
-popd
+cd outline ; yarn build ; cd ..
 
 mkdir -p web/sites/default/themes/wkth
 mkdir -p web/sites/default/themes/wkth/css
 mkdir -p web/sites/default/themes/wkth/js
 
 cp -r src/wkth/* web/sites/default/themes/wkth/
+
 cp outline/outline.theme.css web/sites/default/themes/wkth/css/
 cp outline/dist/outline.js web/sites/default/themes/wkth/js/
 cp outline/dist/outline.js.map web/sites/default/themes/wkth/js/

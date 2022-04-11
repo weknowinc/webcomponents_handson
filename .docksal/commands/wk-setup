@@ -10,4 +10,3 @@ cp -r src/wkwc/* outline/src/components/wk/
 
 zcat resources/drupalwc.sql.gz | fin db import --progress
 fin drush generate-realistic
-fin wk-up-outline
