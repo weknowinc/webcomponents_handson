@@ -1,10 +1,10 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import './wk-simple-card';
+import './wk-card';
 
 export default {
-  title: 'Content/Simple Card',
-  component: 'wk-simple-card',
+  title: 'WK/Card',
+  component: 'wk-card',
   argTypes: {},
   args: {
     label: 'The 10 Most Beautiful Beaches in the World',
@@ -13,6 +13,13 @@ export default {
     url: '#',
     bgImage: 'https://1.bp.blogspot.com/-yo_E9jN5nk8/V9q5FiXE98I/AAAAAAAAAMo/-MoJlA7GBqs8VhLS__v_j81caWtcZ0dTACLcB/s1600/large_the-word-defines-womanhood-snsoriyo.jpg'
   },
+  decorators: [
+    Story => html`
+      <outline-container class="py-12">
+        ${Story()} 
+      </outline-container>
+    `,
+  ],
 };
 
 const Template = ({
@@ -23,16 +30,14 @@ const Template = ({
   bgImage
 }): TemplateResult =>
   html`
-    <outline-container>
-      <wk-simple-card
-        label="${ifDefined(label)}"
-        tag="${ifDefined(tag)}"
-        date=${ifDefined(date)}
-        url="${ifDefined(url)}"
-        bg-image="${ifDefined(bgImage)}"
-      >
-      </wk-simple-card>
-    </outline-container>
+    <wk-card
+      label="${ifDefined(label)}"
+      tag="${ifDefined(tag)}"
+      date=${ifDefined(date)}
+      url="${ifDefined(url)}"
+      bg-image="${ifDefined(bgImage)}"
+    >
+    </wk-card>
   `;
 
-export const SimpleCard = Template.bind({});
+export const Card = Template.bind({});

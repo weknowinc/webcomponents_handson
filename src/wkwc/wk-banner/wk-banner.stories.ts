@@ -1,22 +1,31 @@
 import { html, TemplateResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import './wk-complex-card';
+import './wk-banner';
 import '../../base/outline-heading/outline-heading';
 
 
-const cardVariantOptions = ['primary' , 'secondary' , 'tertiary']
+const bannerVariantOptions = ['primary' , 'secondary' , 'tertiary']
 
 export default {
-  title: 'Content/Complex Card',
+  title: 'WK/Banner',
   component: 'wk-complex-card',
   argTypes: {
+    headingSlot: {
+      name: 'slot="heading"',
+      description: 'The heading slot.',
+      table: {
+        category: 'Slots',
+      },
+      control: { type: 'text' },
+    },
     variant: {
       control: {
         type: 'select'
       },
-      options: cardVariantOptions
+      options: bannerVariantOptions
     }
   },
+  
   args: {
     headingSlot: html`
       <outline-heading level='h1' slot='heading'>
@@ -29,6 +38,14 @@ export default {
     rounded: false,
     variant: 'primary'
   },
+  
+  decorators: [
+    Story => html`
+      <outline-container class="py-12">
+        ${Story()} 
+      </outline-container>
+    `,
+  ],
 };
 
 const Template = ({
@@ -41,7 +58,7 @@ const Template = ({
 }): TemplateResult =>
   html`
     <outline-container>
-      <wk-complex-card
+      <wk-banner
         tag="${ifDefined(tag)}"
         date=${ifDefined(date)}
         url="${ifDefined(url)}"
@@ -49,8 +66,8 @@ const Template = ({
         ?rounded=${rounded}
       >
       ${ifDefined(headingSlot)}
-      </wk-complex-card>
+      </wk-banner>
     </outline-container>
   `;
 
-export const ComplexCard = Template.bind({});
+export const Banner = Template.bind({});

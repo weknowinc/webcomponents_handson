@@ -1,0 +1,35 @@
+:host {
+  @apply mb-8 block overflow-hidden;
+}
+
+.banner {
+  @apply relative p-12;
+}
+
+.banner--primary {
+  @apply bg-blue-200;
+}
+
+.banner--secondary {
+  @apply bg-green-200;
+}
+
+.banner--tertiary {
+  @apply bg-purple-200;
+}
+
+.banner--rounded {
+  @apply rounded-2xl;
+}
+
+.banner__content {
+  @apply w-full px-4 py-6 text-center;
+}
+
+.banner__tag {
+  @apply mb-6 text-sm uppercase;
+}
+
+.banner__heading {
+  @apply text-blue-900;
+}

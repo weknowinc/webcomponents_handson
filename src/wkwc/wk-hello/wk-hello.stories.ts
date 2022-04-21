@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit';
 import './wk-hello';
 
 export default {
-  title: 'Content/Hello',
+  title: 'WK/Hello',
   component: 'wk-hello',
 };
 

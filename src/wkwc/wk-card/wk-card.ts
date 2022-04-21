@@ -1,14 +1,14 @@
 import { html, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { OutlineElement } from '../../base/outline-element/outline-element';
-import componentStyles from './wk-simple-card.css.lit';
+import componentStyles from './wk-card.css.lit';
 
 /**
- * The Simple Card component.
- * @element wk-simple-card
+ * The Card component.
+ * @element wk-card
  */
-@customElement('wk-simple-card')
-export class WkSimpleCard extends OutlineElement {
+@customElement('wk-card')
+export class WkCard extends OutlineElement {
   static styles = [componentStyles];
 
   /**
@@ -33,21 +33,19 @@ export class WkSimpleCard extends OutlineElement {
 
   render(): TemplateResult {
     return html`
-      <div class="simple-card">
-        <div class="simple-card__background">
-          <a href="${this.url}">
-            <img src="${this.bgImage}" alt="${this.title}" />
-          </a>
+      <div class="card">
+        <div class="card__image">
+          <img src="${this.bgImage}" alt="${this.title}" />
         </div>
 
-        <div class="simple-card__content">
-          <span class="simple-card__tag">Fashion</span>
+        <div class="card__content">
+          <span class="card__tag">Fashion</span>
 
-          <h4 class="simple-card__title">
+          <h4 class="card__title">
             <a href="${this.url}">${this.title}</a>
           </h4>
 
-          <div class="simple-card__meta">${this.date}</div>
+          <div class="card__meta">${this.date}</div>
         </div>
       </div>
     `;
