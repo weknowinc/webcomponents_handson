@@ -103,9 +103,9 @@
     {{ content|without('field_image', 'links') }}
   </div>
 
-  <wk-complex-card rounded date="{{ date }}">
+  <wk-banner rounded date="{{ date }}">
     <h2{{ title_attributes.addClass('node__title') }} slot="heading">
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
-  </wk-complex-card>
+  </wk-banner>
 </article>

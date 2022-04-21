@@ -28,7 +28,7 @@ Once you fetch Phase2's [Outline](https://github.com/phase2/outline) design syst
 
 There are additional commands you might find useful:
 
-- ```fin wk-up-outline```: Compiles outline and update Drupal theme with it
+- ```fin wk-sync```: Compiles outline and update Drupal theme with it
 
 ### Using Phase2 Outline
 
