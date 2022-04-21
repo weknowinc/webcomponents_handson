@@ -2,7 +2,10 @@ global-styling:
   version: 1.0
   css:
     theme:
-      css/base.css: {}
+      css/outline.theme.css: {}
   js:
-    js/outline.js: {}
+    js/outline.js:
+      attributes:
+        type: module
+        weight: 100
     js/outline.js.map: {}

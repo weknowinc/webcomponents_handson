@@ -1,7 +1,14 @@
-## Setups your Drupal for this handons
-## Usage: fin update-outline
+## Setups your Drupal for this hand-on workshop
+## Usage: fin wk-setup
 
 cd ${PROJECT_ROOT}
+git clone https://github.com/phase2/outline/
+cd outline ; git checkout 920145e43d8fbd2243ada320e9708d47ca4680f4 ; cd ..
+
+mkdir -p outline/src/components/wk/
+cp -r resources/wkwc/* outline/src/components/wk/
+mkdir -p web/sites/default/themes/wkth/
+cp -r resources/wkth/* web/sites/default/themes/wkth/
+
 zcat resources/drupalwc.sql.gz | fin db import --progress
 fin drush generate-realistic
-fin update-outline

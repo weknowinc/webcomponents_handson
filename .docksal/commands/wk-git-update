@@ -1,0 +1,8 @@
+## Updates the repo with the wkth & wkwc directories
+## Usage: fin wk-git-update
+
+cp -r outline/src/components/wk/* resources/wkwc/
+cp -r web/sites/default/themes/wkth/* resources/wkth/
+rm resources/wkth/css/outline.theme.css
+rm resources/wkth/js/outline.js
+rm resources/wkth/js/outline.js.map

@@ -1,0 +1,36 @@
+:host {
+  @apply mb-8 block;
+}
+
+.card {
+  @apply relative
+    flex
+    flex-col overflow-hidden
+    rounded-lg
+    shadow-xl
+    md:flex-row;
+}
+
+.card__image {
+  @apply md:w-[15rem];
+}
+
+.card__image img {
+  @apply block h-full w-full object-cover;
+}
+
+.card__content {
+  @apply px-5 py-4;
+}
+
+.card__tag {
+  @apply mb-2 block text-sm uppercase;
+}
+
+.card__title {
+  @apply m-0 mb-4 text-2xl;
+}
+
+.card__title a {
+  @apply text-blue-900 no-underline;
+}
