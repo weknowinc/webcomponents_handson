@@ -81,7 +81,7 @@ These are some Web Components 101 articles you might find useful:
 
 ### Scenario 1: webComponent Hello World
 
-In the [initial example](https://github.com/weknowinc/webcomponents_wk_handson/tree/main/wk-hello) you'll find 3 files:
+In the [initial hello example](https://github.com/weknowinc/webcomponents_wk_handson/tree/main/wk-hello) you'll find 3 files:
 
 - The style file `wk-hello.css`: Which in this initial case doesn't have code.
 - The TypeScript file with the webComponent description `wk-hello.ts`: Interesting thing about it is the inclussion of LIT an outline components which make everything work. In this simple example we create a component, nothing more.
@@ -93,7 +93,7 @@ Once you have run Yarn you'll also have an output file used by Storybook's imple
 
 ### Scenario 2: webComponent gets simple string attributes
 
-For [this example](https://github.com/weknowinc/webcomponents_wk_handson/tree/main/wk-simple-card) we use attributes to configure the webComponent:
+For [the simple-card example](https://github.com/weknowinc/webcomponents_wk_handson/tree/main/wk-simple-card) we use attributes to configure the webComponent:
 
 - The style file `wk-simple-card.css`: The only say to say about it is the particular syntax to refer to the webcomponent name. Instead of the name, we add "&" and that will be interpreted as the webcomponent name.
 - The TypeScript file with the webComponent description `wk-simple-card.ts`: You can first see the explicit declaration of the attributes (aka property) and the html template which uses the properties.
@@ -103,7 +103,7 @@ As opposed to the initial example, these does use CSS rules which are compiled i
 
 ### Scenario 3: webComponent gets data as slots
 
-We will now use slots instead of properties to pass information to the webComponent. As we saw attributes could be string, but if you use slots you can pass HTML code directly to the webComponent. In [this example](https://github.com/weknowinc/webcomponents_wk_handson/tree/main/wk-biography) we will use a single (default) slot, but we will see later that we could have more.
+We will now use slots instead of properties to pass information to the webComponent. As we saw attributes could be string, but if you use slots you can pass HTML code directly to the webComponent. In [biography example](https://github.com/weknowinc/webcomponents_wk_handson/tree/main/wk-biography) we will use a single (default) slot, but we will see later that we could have more.
 
 By using the [HTMLSlotElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement) (`<slot></slot>`) we can pass to the webComponent the HTML we want it to render inside it (see [Lit exaplanation](https://lit.dev/docs/components/shadow-dom/#slots)).
 
