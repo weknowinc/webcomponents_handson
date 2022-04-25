@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Hands On talk about webComponents & Drupal</title>
+
+		<!-- Remote !-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/simple.min.css" id="theme">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/moon.min.css">
+		<!-- Usando https://cdnjs.com/libraries/reveal.js/4.1.0 !-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai.min.css">
+		<!-- Usando https://cdnjs.com/libraries/highlight.js/11.5.1 !-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section data-background="#C6F3C9">
+					<section>
+						<h2>Hands On talk</h2>
+						<h3>webComponents & Drupal</h3>
+						<h4>(using Phase2 Outline)</h4>
+					</section>
+
+					<section>
+						<h3>Your sandbox environment</h3>
+						<p style="text-align: left; margin-left: 200px;">You'll need:</p>
+						<ul>
+							<li>The hands on <a href="https://github.com/weknowinc/webcomponents_handson">repository</a>.</li>
+							<li>To have <a href="https://docs.docksal.io/getting-started/setup/">Docksal</a> installed.</li>
+							<li>For outline you'll need:
+								<ul>
+									<li><a href="https://nodejs.org/en/download/package-manager/#nvm">NVM/Node16</a>.</li>
+									<li>And <a href="https://classic.yarnpkg.com/lang/en/docs/install/">Yarn v1</a> as well.</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>Within this repository root and<br/>with <a href="https://docs.docksal.io/getting-started/setup/">Docksal installed</a> you can run:</p>
+						<pre class="bash"><code data-trim>
+$ fin init
+$ fin wk-setup
+$ fin drush uli
+						</code></pre>
+						<p>This will leave a Drupal running with everything you need.</p>
+					</section>
+
+					<section>
+						<p>Then we move to the outline. With <a href="https://nodejs.org/en/download/package-manager/#nvm">Node</a> &amp; <a href="https://classic.yarnpkg.com/lang/en/docs/install/">Yarn</a> installed, you can run the following commands:</p>
+						<pre class="bash"><code data-trim>
+$ cd outline/
+$ yarn install
+$ yarn start
+						</code></pre>
+						<p>This will start Storybook and<br/>keep updating when you do changes.</p>
+					</section>
+
+					<section>
+						<h3>Your sandbox environment</h3>
+						<p>Once ready you get:</p>
+						<ul>
+							<li>A Drupal 9.1 installation using Olivero as the base theme and some demo content.</li>
+							<li>A Phase2 Outline design system version from their github repo (detached as P2 doesn't have an stable version yet).</li>
+							<li>An Olivero subtheme we named <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/">wkth</a>.</li>
+							<li>A couple of example webComponents we named <a href="https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/">wkwc</a>.</li>
+						</ul>
+						<br/>
+						<p>The <b>wkth</b> subtheme and <b>wkwc</b> webComponents are used within the hands on environment (they are copied within Drupal and Outline).</p>
+					</section>
+
+					<section>
+					</section>
+
+					<section>
+					</section>
+			</div>
+		</div>
+
+		<!-- Remote !-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<!-- Usando https://cdnjs.com/libraries/reveal.js/4.1.0 !-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+		<!-- Usando https://cdnjs.com/libraries/highlight.js/11.5.1 !-->
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+
+		</script>
+
+	</body>
+</html>
