@@ -44,43 +44,109 @@
 					</section>
 
 					<section>
-						<p>Within this repository root and<br/>with <a href="https://docs.docksal.io/getting-started/setup/">Docksal installed</a> you can run:</p>
+						<h3>Docksal Drupal</h3>
+						<br/>
+						<p style="font-size: 80%;">Within this repository root and with <a href="https://docs.docksal.io/getting-started/setup/">Docksal installed</a> you can run:</p>
 						<pre class="bash"><code data-trim>
 $ fin init
 $ fin wk-setup
 $ fin drush uli
 						</code></pre>
-						<p>This will leave a Drupal running with everything you need.</p>
+						<p style="font-size: 80%;">This will leave a Drupal running with everything you need.</p>
 					</section>
 
 					<section>
-						<p>Then we move to the outline. With <a href="https://nodejs.org/en/download/package-manager/#nvm">Node</a> &amp; <a href="https://classic.yarnpkg.com/lang/en/docs/install/">Yarn</a> installed, you can run the following commands:</p>
+						<h3>Outline</h3>
+						<p style="font-size: 80%;">Then we move to the outline. With <a href="https://nodejs.org/en/download/package-manager/#nvm">Node</a> &amp; <a href="https://classic.yarnpkg.com/lang/en/docs/install/">Yarn</a> installed,<br/>you can run the following commands:</p>
 						<pre class="bash"><code data-trim>
 $ cd outline/
 $ yarn install
 $ yarn start
 						</code></pre>
-						<p>This will start Storybook and<br/>keep updating when you do changes.</p>
+						<p style="font-size: 80%;">This will start Storybook and<br/>keep updating when you do changes.</p>
 					</section>
 
 					<section>
-						<h3>Your sandbox environment</h3>
-						<p>Once ready you get:</p>
-						<ul>
+						<h3>Outline & Drupal</h3>
+						<br/>
+						<p style="text-align: left; margin-left: 20px; font-size: 80%;">You also have a Docksal command:</p>
+						<pre class="bash"><code data-trim>
+$ fin wk-sync
+						</code></pre>
+						<p style="font-size: 80%;">which compiles outline and update Drupal theme with it.</p>
+					</section>
+
+					<section>
+						<h3>Your sandbox environment (I)</h3>
+						<p style="text-align: left; margin-left: 20px;">Once ready you get:</p>
+						<ul style="font-size: 80%;">
 							<li>A Drupal 9.1 installation using Olivero as the base theme and some demo content.</li>
 							<li>A Phase2 Outline design system version from their github repo (detached as P2 doesn't have an stable version yet).</li>
 							<li>An Olivero subtheme we named <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/">wkth</a>.</li>
 							<li>A couple of example webComponents we named <a href="https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/">wkwc</a>.</li>
 						</ul>
+					</section>
+
+					<section>
+						<h3>Your sandbox environment (II)</h3>
 						<br/>
-						<p>The <b>wkth</b> subtheme and <b>wkwc</b> webComponents are used within the hands on environment (they are copied within Drupal and Outline).</p>
+						<p>The <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/">wkth</a> subtheme and <a href="https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/">wkwc</a> webComponents are used within the hands on environment (they are copied within Drupal and Outline).</p>
+					</section>
+				</section>
+
+				<section data-background="#99D0E2">
+					<section>
+						<h3>A brief webComponents introduction</h3>
+						<ul style="font-size: 80%;">
+							<li>webComponents have been around for a while now (<a href="https://medium.com/@pablortsal/the-year-of-web-components-c92960830d00">v1 implementation 2018</a>) and it is supported by <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components#browser_compatibility">most mayor browsers</a>.</li>
+							<li>You can use webComponents directly by calling the browser API, but it is simpler to use libraries like <a href="https://stenciljs.com/">StencilJS</a> or <a href="https://lit.dev/">LitJS</a> (currently being used by Outline).</li>
+						</ul>
 					</section>
 
+					<section>
+						<h3>webComponents use a shadow DOM</h3>
+						<p style="font-size: 50%;">This <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">Shadow DOM</a> tree is rendered separately from the main document DOM.</p>
+						<img alt="ShadowDOM" src="./resources/ShadowDOM.jpg" title="ShadowDOM" width="400px">
+						<p style="font-size: 50%;">It allows to encapsulate your CSS within it, and protects it from outside interference. As a side effect, styles from outside won't have any effect on your webComponent.</p>
+					</section>
+
+					<section>
+						<h3>More about webComponents</h3>
+						<ul style="font-size: 80%;">
+							<li>All webComponents have a <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks">lifeCycle</a> and they are similar to React components.</li>
+							<li>For people using Drupal, there is an initiative to create webComponents for different Drupal objects. In particular the <a href="https://www.drupal.org/project/decoupled_menus_initiative">decouple Menus/module initiative</a> is an interesting starting point (<a href="https://dri.es/state-of-drupal-presentation-july-2020">mentioned by Dries in DrupalCon 2020 EU</a>).</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>What we will show</h3>
+						<p>In this handson you'll have examples of:</p>
+						<ul style="font-size: 80%;">
+							<li>How to create a webComponent using outline.</li>
+							<li>Pass to it attributes to it.</li>
+							<li>Use slots to receive HTML.</li>
+							<li>Integrate a webComponent with Drupal.</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>Some Web Components 101<br/>articles you might find useful:</p>
+						<ul style="font-size: 80%;">
+							<li><a href="https://dev.to/this-is-learning/web-components-101-history-2p24">History</a></li>
+							<li><a href="https://dev.to/this-is-learning/web-components-101-vanilla-javascript-2pja">Vanilla JavaScript</a></li>
+							<li><a href="https://dev.to/this-is-learning/web-components-101-lit-framework-3en1">Lit Framework</a></li>
+							<li><a href="https://dev.to/this-is-learning/web-components-101-framework-comparison-989">Framework Comparison</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-background="#FBE7BF">
 					<section>
 					</section>
 
 					<section>
 					</section>
+				</section>
 			</div>
 		</div>
 
