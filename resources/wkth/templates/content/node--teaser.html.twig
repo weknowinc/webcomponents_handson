@@ -67,45 +67,28 @@
  */
 #}
 
-{%
-  set classes = [
+{% set classes = [
   'node',
-  'node--type-' ~ node.bundle|clean_class,
+  'node--type-' ~ (node.bundle|clean_class),
   node.isPromoted() ? 'node--promoted',
   node.isSticky() ? 'node--sticky',
   not node.isPublished() ? 'node--unpublished',
-  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-]
-%}
+  view_mode ? 'node--view-mode-' ~ (view_mode|clean_class)
+] %}
 
-<article{{ attributes.addClass(classes) }}>
-  <header>
-    {{ title_prefix }}
-    {{ title_suffix }}
-    {% if display_submitted %}
-      <div class="node__meta">
-        <span{{ author_attributes }}>
-          {{ 'By'|t }} {% apply spaceless %}<span class="node__author">{{ author_name }}</span>{% endapply %}, {{ date }}
-        </span>
-        {{ metadata }}
-      </div>
-    {% endif %}
-    {% if label and not page %}
-      <div class="node__top-wrapper">
-        {{ content.field_image }}
-        <h2{{ title_attributes.addClass('node__title') }}>
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
-      </div>
-    {% endif %}
-  </header>
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_image', 'links') }}
-  </div>
+<article {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
 
-  <wk-banner rounded date="{{ date }}">
+  <wk-banner
+    tag="{{ content.field_tags|field_value }}"
+    date="{{ date }}"
+    url="{{ url }}"
+    variant="primary"
+    rounded
+  >
     <h2{{ title_attributes.addClass('node__title') }} slot="heading">
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {{ label }}
     </h2>
   </wk-banner>
 </article>
