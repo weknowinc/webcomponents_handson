@@ -72,7 +72,7 @@ In the [initial hello example](https://github.com/weknowinc/webcomponents_handso
 
 - The style file `wk-hello.css`: Which in this initial case doesn't have code.
 - The TypeScript file with the webComponent description `wk-hello.ts`: Interesting thing about it is the inclussion of LIT an outline components which make everything work. In this simple example we create a component, nothing more.
-- The Storybook file `wk-hello.stories.ts` with an example use of the defined webComponent: It just shows the created webComponent.
+- The Storybook file `wk-hello.stories.ts` with an example use of the defined webComponent: It just shows the created webComponent within StoryBook. It is interesting to see the line <code>title: 'WK/Hello'</code> which defines the StoryBook category.
 
 ![Seeing the webComponents in StoryBook](./resources/Outline-Phase2-StoryBook.png "StoryBook")
 

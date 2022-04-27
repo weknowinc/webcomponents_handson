@@ -142,6 +142,47 @@ $ fin wk-sync
 
 				<section data-background="#FBE7BF">
 					<section>
+						<h2>Scenario 1 : wk-hello</h2>
+						<h3>webComponent Hello World</h3>
+						<br/>
+						<p style="font-size: 80%;">We will go over the <a href="https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/wk-hello">wk-hello</a> initial hello example.</p>
+					</section>
+
+					<section>
+						<h3>wk-hello</h3>
+						<p style="text-align: left; margin-left: 20px; font-size: 90%;">We have 3 files:</p>
+						<ul style="font-size: 70%;">
+							<li>The style file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-hello/wk-hello.css">wk-hello.css</a>: Which in this initial case doesn't have code.</li>
+							<li>The TypeScript file with the webComponent description <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-hello/wk-hello.ts">wk-hello.ts</a>: Interesting thing about it is the inclussion of LIT an outline components which make everything work. In this simple example we create a component, nothing more.</li>
+							<li>The Storybook file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-hello/wk-hello.stories.ts">wk-hello.stories.ts</a> with an example use of the defined webComponent: It just shows the created webComponent within StoryBook. It is interesting to see the line:<br/><code style="text-align: left; margin-left: 500px; font-size: 90%;">title: 'WK/Hello'</code><br/>Which defines the StoryBook category.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>wk-hello</h3>
+						<p><img alt="Seeing the webComponents in StoryBook" src="./resources/Outline-Phase2-StoryBook.png" title="StoryBook"></p>
+					</section>
+
+					<section>
+						<h3>wk-hello</h3>
+						<p>Once you have run Yarn you'll also have an output file used by Storybook's implementation<br/><code>wk-hello.css.lit.ts</code><br/>which has the compiled output and should be ignored.</p>
+						<p>This file is used by the Storybook implementation, but Outline output files are different.</p>
+					</section>
+
+					<section>
+						<h2>Scenario 2 : wk-card</h2>
+						<h3>webComponent gets string attributes</h3>
+						<br/>
+						<p>For <a href="https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/wk-card">the card example</a> we use<br/>attributes to configure the webComponent.</p>
+					</section>
+
+					<section>
+						<h3>wk-card</h3>
+						<ul style="font-size: 70%;">
+							<li>The style file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.css">wk-simple-card.css</a>: The only say to say about it is the particular syntax to refer to the webcomponent name. Instead of the name, we add "&amp;" and that will be interpreted as the webcomponent name.</li>
+							<li>The TypeScript file with the webComponent description <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.ts">wk-simple-card.ts</a>: You can first see the explicit declaration of the attributes (aka property) and the html template which uses the properties.</li>
+							<li>The Storybook file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.stories.ts">wk-simple-card.stories.ts</a> with an example use of the defined webComponent: This also can be used as an implementation example. You will first need to export the properties, grab them in the template and use the webComponent.</li>
+						</ul>
 					</section>
 
 					<section>
