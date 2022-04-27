@@ -179,14 +179,47 @@ $ fin wk-sync
 					<section>
 						<h3>wk-card</h3>
 						<ul style="font-size: 70%;">
-							<li>The style file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.css">wk-simple-card.css</a>: The only say to say about it is the particular syntax to refer to the webcomponent name. Instead of the name, we add "&amp;" and that will be interpreted as the webcomponent name.</li>
-							<li>The TypeScript file with the webComponent description <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.ts">wk-simple-card.ts</a>: You can first see the explicit declaration of the attributes (aka property) and the html template which uses the properties.</li>
-							<li>The Storybook file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.stories.ts">wk-simple-card.stories.ts</a> with an example use of the defined webComponent: This also can be used as an implementation example. You will first need to export the properties, grab them in the template and use the webComponent.</li>
+							<li>The style file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.css">wk-simple-card.css</a>: It is interesting to see we add "&amp;" which will be interpreted as the webcomponent name.</li>
+							<li>The webComponent description <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.ts">wk-simple-card.ts</a>: You can first see the explicit declaration of the attributes (aka property) and the html template which uses the properties.</li>
+							<li>The Storybook file <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkwc/wk-card/wk-card.stories.ts">wk-simple-card.stories.ts</a> with an example use of the defined webComponent: You will first need to export the properties, grab them in the template and use the webComponent.</li>
 						</ul>
 					</section>
 
 					<section>
+						<h2>Scenario 3 : wk-card</h2>
+						<h3>webComponent strings and a slot</h3>
+						<br/>
+						<p>With slots you can pass HTML code directly to the webComponent.</p>
 					</section>
+
+					<section>
+						<p>By using the HTMLSlotElement (<code><slot></slot></code>) we can pass to the webComponent the HTML we want it to render inside it (see Lit exaplanation).</p>
+					</section>
+
+					<section>
+						<p>Continue with explanation...</p>
+					</section>
+				</section>
+				<section data-background="#C6F3C9">
+					<section>
+						<h2>Drupal Integration</h2>
+						<p>First we derived from Drupal's latest theme Olivero a subtheme: "weKnow Outline Theme"</p>
+						<p>Within it's <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/wkth.libraries.yml">wkth.libraries.yml</a> file we include the outline output JS+CSS files.</p>
+						<p>The only difference between a regular subtheme with JS+CSS inclusion and the export of webComponents.</p>
+					</section>
+				
+					<section>
+						<h3>wkth.libraries.yml</h3>
+						<p><img alt="wkth.libraries.yml configuration" src="./resources/wkth_libraries_yml.png" title="wkth.libraries.yml"></p>
+						<p style="font-size: 70%;">The "attributes type module" is what makes them "magically" available.</p>
+						<p style="font-size: 70%;">Now we can use the webComponents on your twig.</p>
+					</section>
+
+					<section>
+						<h3>node--teaser.html.twig</h3>
+						<p>See <a href="https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/templates/content/node--teaser.html.twig">node--teaser.html.twig template</a> to check the use of <code>wk-banner</code> webComponent and pass one the attribute "rounded" and the slot "heading".</p>
+						<p>That's enough to glue everything together. Just visit the site's <a href="http://webcomponents-handson.docksal.site/">homepage</a> to see the result.</p>
+					</section>	
 				</section>
 			</div>
 		</div>

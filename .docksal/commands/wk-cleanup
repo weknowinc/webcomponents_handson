@@ -1,0 +1,8 @@
+## Clean Up your local hand-on environment
+## Usage: fin wk-cleanup
+
+cd ${PROJECT_ROOT}
+rm -Rf node_modules
+rm -Rf outline
+rm -Rf vendor
+rm -Rf web

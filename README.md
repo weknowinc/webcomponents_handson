@@ -26,15 +26,13 @@ yarn start
 
 This will start Storybook and keep updating when you do changes.
 
-If you need to run a build or check compiled output you can run:
+If you need to run a build or check compiled output you can run ```yarn build```, but given the Docksal setup it is best to simply use:
 
 ```
-yarn build
+fin wk-sync
 ```
 
-But given the Docksal setup it is best to simply use:
-
-- ```fin wk-sync```: Compiles outline and update Drupal theme with it
+Which compiles outline and update Drupal theme with it.
 
 ## webComponent examples
 
@@ -84,7 +82,7 @@ For [the card example](https://github.com/weknowinc/webcomponents_handson/tree/m
 
 - The style file `wk-simple-card.css`: The only say to say about it is the particular syntax to refer to the webcomponent name. Instead of the name, we add "&" and that will be interpreted as the webcomponent name.
 - The TypeScript file with the webComponent description `wk-simple-card.ts`: You can first see the explicit declaration of the attributes (aka property) and the html template which uses the properties.
-- The Storybook file `wk-simple-card.stories.ts` with an example use of the defined webComponent: This also can be used as an implementation example. You will first need to export the properties, grab them in the template and use the webComponent.
+- The Storybook file `wk-simple-card.stories.ts` with an example use of the defined webComponent: This can also be used as an implementation example. You will first need to export the properties, grab them in the template and use the webComponent.
 
 As opposed to the initial example, these does use CSS rules which are compiled into `wk-simple-card.css.lit.ts` so `wk-simple-card.stories.ts` can use them.
 
@@ -96,21 +94,18 @@ By using the [HTMLSlotElement](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ## Drupal Integration
 
-First we derived from Drupal's latest theme Olivero a subtheme we are calling "weKnow Outline Theme", within it's ```wkth.libraries.yml``` file we include the outline output JS+CSS and configure it so webComponents are available to the theme. The only difference between a regular subtheme with JS+CSS inclusion and the export of webComponents can be seen in this screenshot:
+First we derived from Drupal's latest theme Olivero a subtheme we are calling "weKnow Outline Theme", within it's ```wkth.libraries.yml``` file we include the outline output JS+CSS files and configure it so webComponents are available to the theme. The only difference between a regular subtheme with JS+CSS inclusion and the export of webComponents can be seen in this screenshot:
 
 ![wkth.libraries.yml configuration](./resources/wkth_libraries_yml.png "wkth.libraries.yml")
 
 Once this is done (you have it pre-setup in this hands on), you can simply tweak the twig file as you would always do. The "attributes type module" is what makes them "magically" available. Now you can use the webComponents on your twig.
 
-Now in the [node--teaser.html.twig template](https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/templates/content/node--teaser.html.twig) we can see the use of ```wk-banner``` webCompenent and pass one the attribute "rounded" and the slot "heading". That's enough to glue everything together.
+Now in the [node--teaser.html.twig template](https://github.com/weknowinc/webcomponents_handson/blob/main/resources/wkth/templates/content/node--teaser.html.twig) we can see the use of ```wk-banner``` webComponent and pass one the attribute "rounded" and the slot "heading". That's enough to glue everything together.
 
 ## CleanUp
 
 ```
 fin stop
 fin project remove
-rm -Rf node_modules
-rm -Rf outline
-rm -Rf vendor
-rm -Rf web
+fin wk-cleanup
 ```
