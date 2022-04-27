@@ -3,7 +3,7 @@
 }
 
 .banner {
-  @apply relative p-12;
+  @apply block relative p-12;
 }
 
 .banner--primary {

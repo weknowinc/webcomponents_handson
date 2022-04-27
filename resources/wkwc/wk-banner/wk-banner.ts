@@ -1,16 +1,16 @@
-import { html, TemplateResult } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { OutlineElement } from '../../base/outline-element/outline-element';
-import { classMap } from 'lit/directives/class-map.js';
-import componentStyles from './wk-banner.css.lit';
+import { html, TemplateResult } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { OutlineElement } from "../../base/outline-element/outline-element";
+import { classMap } from "lit/directives/class-map.js";
+import componentStyles from "./wk-banner.css.lit";
 
-export type BannerVariant = 'primary' | 'secondary' | 'tertiary';
+export type BannerVariant = "primary" | "secondary" | "tertiary";
 
 /**
  * The Banner component.
  * @element wk-banner
  */
-@customElement('wk-banner')
+@customElement("wk-banner")
 export class WkBanner extends OutlineElement {
   static styles = [componentStyles];
 
@@ -39,17 +39,17 @@ export class WkBanner extends OutlineElement {
    * The banner style variant to use.
    */
   @property()
-  variant: BannerVariant = 'primary';
+  variant: BannerVariant = "primary";
 
   render(): TemplateResult {
     const classes = {
-      'banner': true,
-      'banner--rounded': this.rounded,
+      banner: true,
+      "banner--rounded": this.rounded,
       [`banner--${this.variant}`]: true,
     };
 
     return html`
-      <div class="${classMap(classes)}">
+      <a class="${classMap(classes)}" href="${this.url}">
         <div class="banner__content">
           <span class="banner__tag">${this.tag}</span>
 
@@ -59,7 +59,7 @@ export class WkBanner extends OutlineElement {
 
           <div class="banner__meta">${this.date}</div>
         </div>
-      </div>
+      </a>
     `;
   }
 }
