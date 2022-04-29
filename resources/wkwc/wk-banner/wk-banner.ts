@@ -39,7 +39,7 @@ export class WkBanner extends OutlineElement {
    * The banner style variant to use.
    */
   @property()
-  variant: BannerVariant = "primary";
+  variant: BannerVariant = "secondary";
 
   render(): TemplateResult {
     const classes = {

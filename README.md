@@ -88,9 +88,11 @@ As opposed to the initial example, these does use CSS rules which are compiled i
 
 ### Scenario 3: webComponent gets HTML data as a slot
 
-We will now use slots instead of properties to pass information to the webComponent. As we saw attributes could be string, but if you use slots you can pass HTML code directly to the webComponent. In [banner example](https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/wk-banner) we will use a single (default) slot, but we will see later that we could have more.
+While keep using properies, we will now also use slots to pass information to the webComponent. As we saw attributes could be string, but if you use slots you can pass HTML code directly to the webComponent. In [banner example](https://github.com/weknowinc/webcomponents_handson/tree/main/resources/wkwc/wk-banner) we will use a named slot. There is a default "unnamed" slot which you can use, but doesn't allow to have multiple slots. By using named slots, we can have as many slot as we might need (as we do with properties).
 
-By using the [HTMLSlotElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement) (`<slot></slot>`) we can pass to the webComponent the HTML we want it to render inside it (see [Lit exaplanation](https://lit.dev/docs/components/shadow-dom/#slots)).
+In this example we use ```classMap(classes)```  (a [helper from LIT](https://lit.dev/docs/components/styles/#dynamic-classes-and-styles)) which receives a key/value map object and true values are map into the class.
+
+The use of the [HTMLSlotElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement) (`<slot></slot>`) allow us to pass to the webComponent a full HTML snippet (see [Lit exaplanation](https://lit.dev/docs/components/shadow-dom/#slots)). The HTML code will go inside the invoking element (in this case outline-heading).
 
 ## Drupal Integration
 
