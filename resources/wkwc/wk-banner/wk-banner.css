@@ -3,7 +3,7 @@
 }
 
 .banner {
-  @apply block relative p-12;
+  @apply relative block p-12 no-underline;
 }
 
 .banner--primary {
@@ -27,9 +27,13 @@
 }
 
 .banner__tag {
-  @apply mb-6 text-sm uppercase;
+  @apply mb-6 text-sm uppercase text-gray-600;
 }
 
 .banner__heading {
   @apply text-blue-900;
+}
+
+.banner__meta {
+  @apply text-sm text-gray-700;
 }
