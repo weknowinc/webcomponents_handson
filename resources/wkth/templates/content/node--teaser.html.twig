@@ -80,15 +80,13 @@
   {{ title_prefix }}
   {{ title_suffix }}
 
-  <wk-banner
-    tag="{{ content.field_tags }}"
-    date="{{ date }}"
+  <wk-banner tag="{{ content.field_tags|field_value|safe_join(' | ') }}"
+    date="{{ date|striptags|trim }}"
     url="{{ url }}"
     variant="primary"
-    rounded
-  >
-    <h2{{ title_attributes.addClass('node__title') }} slot="heading">
+    rounded>
+    <outline-heading level="h1" slot="heading">
       {{ label }}
-    </h2>
+    </outline-heading>
   </wk-banner>
 </article>
