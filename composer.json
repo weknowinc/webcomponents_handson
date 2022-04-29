@@ -21,6 +21,7 @@
         "drupal/core-recommended": "^9",
         "drupal/devel": "^4.1",
         "drupal/realistic_dummy_content": "^3.1",
+        "drupal/twig_field_value": "^2.0",
         "drush/drush": "^10.2"
     },
     "conflict": {
