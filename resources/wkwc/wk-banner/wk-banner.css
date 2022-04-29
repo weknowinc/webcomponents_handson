@@ -1,9 +1,13 @@
 :host {
-  @apply mb-8 block overflow-hidden;
+  @apply mb-8 block;
 }
 
 .banner {
   @apply relative block p-12 no-underline;
+
+  &:hover {
+    @apply shadow-xl;
+  }
 }
 
 .banner--primary {
