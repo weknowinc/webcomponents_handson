@@ -12,4 +12,4 @@ cp -r resources/wkth/* web/sites/default/themes/wkth/
 mkdir -p web/sites/default/files/2022-04/
 cp -r resources/images/* web/sites/default/files/2022-04/
 
-zcat resources/drupalwc.sql.gz | fin db import --progress
+zcat < resources/drupalwc.sql.gz | fin db import --progress
