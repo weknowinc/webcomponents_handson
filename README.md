@@ -98,7 +98,7 @@ The use of the [HTMLSlotElement](https://developer.mozilla.org/en-US/docs/Web/AP
 
 ## Drupal Integration
 
-For the Drupal integration part we will be working directly within Drupal: ```web/sites/default/themes/wkth/*```
+For the Drupal integration part of this lab we will be working directly within Drupal: ```web/sites/default/themes/wkth/*```
 
 First we derived from Drupal's latest theme Olivero a subtheme we are calling "weKnow Outline Theme", within it's ```wkth.libraries.yml``` file we include the outline output JS+CSS files and configure it so webComponents are available to the theme. The only difference between a regular subtheme with JS+CSS inclusion and the export of webComponents can be seen in this screenshot:
 
@@ -117,4 +117,6 @@ fin wk-cleanup
 ```
 ## Working handsOn environment
 
-This repository is not a boilerplate, it is a lab repository which users ```resources``` to build your lab. That's why the code you work on it is outside the real of git and won't be committed. Even though you can clone the repo and do something like that, we saw this as a lab. There is a command to update the repo files if necessary (```wk-git-update```), but it is not part of the lab. Only a resource we used to make our life easier. For the purpose of this lab you should work within: ```outline/src/components/wk/*``` & ```web/sites/default/themes/wkth/*```.
+This repository is not a boilerplate, it is a lab repository which uses ```resources``` to build your lab. That's why the code you work on it is outside the realm of git and won't be committed. Even though you can clone the repo and do something like that, we thought this as a lab repository which should be as thin as possible.
+
+There is a command to update the repo files if necessary (```wk-git-update```), but it is not part of the lab. Only a resource we used to make our life easier. For the purpose of this lab you should work within: ```outline/src/components/wk/*``` & ```web/sites/default/themes/wkth/*```.
